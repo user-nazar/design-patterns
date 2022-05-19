@@ -20,7 +20,7 @@ class FeatureAppListCreateAPIView(ListCreateAPIView):
         request_obj.quantity = f'App quantity : {app_quantity}'  # Property Injection
 
         updated_description = f'Updated by : {request_obj.description}'
-        request_obj.set_description(updated_description)  # Interface Injection
+        request_obj.set_description(updated_description)  # Method Injection
         request_obj.save()
         return Response(request_serializer.data, status=status.HTTP_201_CREATED)
 
